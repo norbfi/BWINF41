@@ -1,13 +1,13 @@
 # Bundeswettbewerbinformatik 41
 
-### Aufgabenstatus
+## Aufgabenstatus
 (Einzelne To Do's, sowie der Status  der Aufgabe)
-##Aufgabe 1 (unbearbeitet)
-##Aufgabe 2 (unbearbeitet)
-##Aufgabe 3 (unbearbeitet) 
-##Aufgabe 4 (unbearbeitet)
-##Aufgabe 5 (unbearbeitet)
- -Beispiel To Do: Code schreiben, der aus den Daten ein Netz baut 
+###Aufgabe 1 (unbearbeitet)
+###Aufgabe 2 (unbearbeitet)
+###Aufgabe 3 (unbearbeitet) 
+###Aufgabe 4 (unbearbeitet)
+###Aufgabe 5 (unbearbeitet)
+- Beispiel To Do: Code schreiben, der aus den Daten ein Netz baut 
 
 ## Links
 ### Beispiele
