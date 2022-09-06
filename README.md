@@ -1,7 +1,6 @@
 # Bundeswettbewerbinformatik 41
 
 ## Aufgabenstatus
-(Einzelne To Do's, sowie der Status  der Aufgabe)
 ###Aufgabe 1 (unbearbeitet)
 ###Aufgabe 2 (unbearbeitet)
 ###Aufgabe 3 (unbearbeitet) 
