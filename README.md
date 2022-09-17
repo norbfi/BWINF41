@@ -8,7 +8,6 @@
   - möglich: pygame, pil
 - Regeln beachten
 ### Aufgabe 3: Paul
-- Überlegen in welcher Form ich die Daten speichern möchte
 - Import umseten
 - Die Häufigkeit von gleichen Zahlen zählen
 - Die Häufigkeit von Zahlen in einem 9er Block zählen
