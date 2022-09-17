@@ -5,6 +5,11 @@
 ### Aufgabe 1 (unbearbeitet)
 ### Aufgabe 2: Ben
 ### Aufgabe 3: Paul
+- Überlegen in welcher Form ich die Daten speichern möchte
+- Import umseten
+- Die Häufigkeit von gleichen Zahlen zählen
+- Die Häufigkeit von Zahlen in einem 9er Block zählen
+- Gedanken dazu, ob Diagonalverschieben möglich sind/ Verhältniss von Zahlen in einem 9er Block
 ### Aufgabe 4: Sebastion
 ### Aufgabe 5 (unbearbeitet)
 - Beispiel To Do: Code schreiben, der aus den Daten ein Netz baut 
