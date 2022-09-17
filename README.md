@@ -5,7 +5,7 @@
 ### Aufgabe 1 (unbearbeitet)
 ### Aufgabe 2: Ben
 - modul finden
-- möglich: pygame, pil
+  - möglich: pygame, pil
 - Regeln beachten
 ### Aufgabe 3: Paul
 - Überlegen in welcher Form ich die Daten speichern möchte
