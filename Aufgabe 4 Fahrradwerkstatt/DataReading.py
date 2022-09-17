@@ -6,3 +6,5 @@ def DataReading(source):
             (entrance, duration) = line.split()
             d.append([entrance, duration])
     return d
+
+#input: raw datat output: array mit attributen entrance und duration
