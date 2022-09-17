@@ -4,6 +4,8 @@
 (Einzelne To Do's, sowie der Status  der Aufgabe)
 ### Aufgabe 1 (unbearbeitet)
 ### Aufgabe 2: Ben
+- modul finden
+- Regeln beachten
 ### Aufgabe 3: Paul
 - Überlegen in welcher Form ich die Daten speichern möchte
 - Import umseten
