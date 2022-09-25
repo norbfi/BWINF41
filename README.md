@@ -8,12 +8,13 @@
   - möglich: pygame, pil
 - Regeln beachten
 ### Aufgabe 3: Paul
-- repeated blocks Theorie mit mit dem gesamten Sudoku vereinbar?; vlt sogar aufs gesamte Sudoku anwendbar?    
- -Sebästion und Ben einmal checken lassen
 - Import umseten
 - Die Häufigkeit von gleichen Zahlen zählen + vergleichen
-- Die Häufigkeit von Zahlen in einem 9er Block zählen
-- Die Anzahlen von Zahlen in Blöcken vergleichen
+-Blöcke wiederfinden:
+  -Vergleich der darin vorkommenden Zahlen
+  ->mögliche/korrekte Anordnung der Zahlen in einem Block 
+  ->gleiche Linien der Zahlen  
+
 ### Aufgabe 4: Sebastion
 ### Aufgabe 5 (unbearbeitet)
 
