@@ -8,7 +8,6 @@
   - möglich: pygame, pil
 - Regeln beachten
 ### Aufgabe 3: Paul
-- Import umseten
 - Die Häufigkeit von gleichen Zahlen zählen + vergleichen
 - Blöcke wiederfinden:
 - Vergleich der darin vorkommenden Zahlen
