@@ -11,9 +11,9 @@
 - Import umseten
 - Die Häufigkeit von gleichen Zahlen zählen + vergleichen
 -Blöcke wiederfinden:
-  -Vergleich der darin vorkommenden Zahlen
-  ->mögliche/korrekte Anordnung der Zahlen in einem Block 
-  ->gleiche Linien der Zahlen  
+-Vergleich der darin vorkommenden Zahlen
+-mögliche/korrekte Anordnung der Zahlen in einem Block 
+-gleiche Linien der Zahlen  
 
 ### Aufgabe 4: Sebastion
 ### Aufgabe 5 (unbearbeitet)
