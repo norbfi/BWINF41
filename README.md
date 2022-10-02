@@ -6,7 +6,12 @@
 ### Aufgabe 2: Ben
 - modul finden
   - möglich: pygame, pil
-- Regeln beachten
+- Regeln beachten:
+ - punkt in 2d raster
+ - wächst --> oben unten rechts links
+ - eigene wachstumsgeschwind. jede richtung
+ - nicht crossen
+ - aus orientierung result. lichtreflektion als grauton
 ### Aufgabe 3: Paul
 - Die Häufigkeit von gleichen Zahlen zählen + vergleichen
 - Blöcke wiederfinden:
