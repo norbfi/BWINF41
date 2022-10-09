@@ -13,11 +13,11 @@
   - nicht crossen
   - aus orientierung result. lichtreflektion als grauton
 ### Aufgabe 3: Paul
-- Die Häufigkeit von gleichen Zahlen zählen + vergleichen
-- Blöcke wiederfinden:
-- Vergleich der darin vorkommenden Zahlen
-- mögliche/korrekte Anordnung der Zahlen in einem Block 
-- gleiche Linien der Zahlen  
+- Daten aus Originalsudoku speichern
+- Grunddaten extruder
+- Zahlen wiederfinden (+rotation)
+- Daten Vergleichen Vergleichen
+
 
 ### Aufgabe 4: Sebastion
 ### Aufgabe 5 (unbearbeitet)
