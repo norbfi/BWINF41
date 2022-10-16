@@ -1,5 +1,5 @@
 
-def readSudoku(source, original):
+def readSudoku(source, isOriginal):
 
     sudoku = []
     #textdokument öffnen, auslesen
@@ -10,7 +10,7 @@ def readSudoku(source, original):
         textfileAsList.append(line)
     
     #das orignale Sodoku geht von Zeile 0 bis 8
-    if original:
+    if isOriginal:
         offset = 0
     else:
         offset = 10
@@ -29,8 +29,7 @@ def readNumberFrequency(sudoku):
     for row in range(9):
         for collumn in range(9):
             numberFrequency[int(sudoku[row][collumn])] += 1 
-    numberFrequency.sort()
-    return numberFrequency    
+    return numberFrequency[1:]   
 
 
 def readParallels(sudoku):
@@ -47,4 +46,5 @@ def readParallels(sudoku):
             if int(sudoku[row][collumn]) != 0:
                 parallelsCollumn[collumn] += 1
     
-    return [parallelsRow,parallelsCollumn]    
+    return parallelsRow, parallelsCollumn
+

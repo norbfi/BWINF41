@@ -1,22 +1,20 @@
 from DataReadingSudoku import readSudoku
 from DataReadingSudoku import readNumberFrequency
 from DataReadingSudoku import readParallels
+from DataEvaluationSudoku import isComparable
 
 
-sudokuOriginal = readSudoku('Aufgabe 3 Sudokopie\Beispieldaten\Sudoku0.txt', True)
-sudokuCopy = readSudoku('Sudokopie\Beispieldaten\Sudoku0.txt', False)
+class Sudoku:
 
-print(sudokuOriginal, "\n \n" , sudokuCopy)
-
-#dataReading
-sudokuOrignalNF = readNumberFrequency(sudokuOriginal) #1d Array
-sudokuCopyNF = readNumberFrequency(sudokuCopy) #1d Array
-
-sudokuOrignalPar = [readParallels(sudokuOriginal)] #2d Array [R,C]
-sudokuCopyPar = [readParallels(sudokuCopy)] #2d Array [R,C]
+    def __init__(self, isOrginal):
+        self.field = readSudoku('Aufgabe 3 Sudokopie\Beispieldaten\Sudoku0.txt', isOrginal) #[9][9] Array
+        self.numberfrequency = readNumberFrequency(self.field) #1d Array
+        self.parralels = readParallels(self.field) #2d Array [[R],[C]]
 
 
+sudokuOriginal = Sudoku(True)
+sudokuCopy = Sudoku(False)
 
-
+print(sudokuOriginal.numberfrequency)
 
 

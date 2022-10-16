@@ -1,0 +1,43 @@
+-rotation checken
+
+Vorangehensweise: Direkter Verlgeich
+
+entschlüsselte Zahlen wie markieren?
+-Aus der Häufigkeit rausnehmen (auf 0 setzen)
+-entschlüsslten Liste erstellen
+-Im Copy Sudoku durch ORG/zahl ersetzen
+-lines Wiedererkennen?
+
+
++++++++++++Loop+++++++++ (beginnt bei geringsten mehrfachen Häufigkeit)
+
+Aus der Zahlhäufigkeit lassen sich bereits Zahlen entschlüsseln?
+-Als entschlüsselte Zahl speichern
+
+
+### Auswertung
+-Werte den Block aus:
+    -entschlüsselte Zahl -> vermerken
+    -Anzahl Zahlen
+    -Zahlenhäufigkeiten der Zahlen
+    -Gesamanzahl der Parallelen des Blocks
+        
+-Finde gleiche Blöcke im Original:
+    -entschlüsselte Zahl -> eingrenzung
+    -Anzahl Zahlen
+    -Zahlenhäufigkeiten der Zahlen
+    -Gesamanzahl der Parallelen des Blocks
+
+#Tiefe Auswertung (rekursiv)
+-Werte die Zahlen der Blöcke aus:
+    -Parallelen der enschlüsselten Zahl -> weitere entschlüsselte Zahlen?
+    -Zahlenhäufigkeit mit Parallelen
+    -Davon dann die Blöcke auswerten
+    --> Rekursion bis x tiefe;
+
+==> Zahl eindeutig:
+    -Als gelöste Zahl einsetzen (Häufigkeit irrelevant)
+==> Zahl nicht eindeutig:
+    -Springe zur nächsten Zahl
+
++++++++++++Loopende+++++++++ (wenn jede Zahl entschlüsselt, oder nicht lösbar)
