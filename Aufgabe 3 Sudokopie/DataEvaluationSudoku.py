@@ -9,7 +9,9 @@ def isComparable(orgNF, copyNF, orgPar, copyPar):
     copyParRow = copyPar[0][:]
     copyParCollumn = copyPar[1][:]
     
-    return orgParRow
+    #[0,5,6,2,4,6,2,4,6]
+    #[0,5,6,6,4,2,6,4,2]
+    return "yourMOM"
 
 
 
@@ -19,5 +21,3 @@ def isRotated(sudokuOrignal):
 
 def numberAllocationNF(sudokuOrignalNF, sudokuCopyNF, allocatedNumbers):
     print()
-    
-

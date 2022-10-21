@@ -48,3 +48,11 @@ def readParallels(sudoku):
     
     return parallelsRow, parallelsCollumn
 
+
+
+def createEmptyLineReassignment():
+    
+    return [[False,0,0,0],[False,0,0,0],[False,0,0,0]] #Vorangestelltes Bool: Sicher zugewiesen
+           
+
+
