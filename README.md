@@ -13,8 +13,7 @@
   - nicht crossen
   - aus orientierung result. lichtreflektion als grauton
 ### Aufgabe 3: Paul
-- Daten aus Originalsudoku speichern
-- Grunddaten extruder
+- createEmptyLineReassignment() : Struktur Überarbeiten
 - Zahlen wiederfinden (+rotation)
 - Daten Vergleichen Vergleichen
 
