@@ -12,6 +12,9 @@
   - eigene wachstumsgeschwind. jede richtung
   - nicht crossen
   - aus orientierung result. lichtreflektion als grauton
+  - ### Wichtig:
+  - Die Geschwindigkeit pro Richtung bleibt immer gleich.
+  - 
 ### Aufgabe 3: Paul
 - createEmptyLineReassignment() : Struktur Überarbeiten
 - Zahlen wiederfinden (+rotation)
