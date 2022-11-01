@@ -1,8 +1,8 @@
-
+ï»¿ 
 def readSudoku(source, isOriginal):
 
     sudoku = []
-    #textdokument öffnen, auslesen
+    #textdokument ï¿½ffnen, auslesen
     textfile = open(source, encoding='utf-8-sig') 
     
     textfileAsList = []
@@ -25,7 +25,7 @@ def readSudoku(source, isOriginal):
 
 def readNumberFrequency(sudoku):
     
-    numberFrequency = [0,0,0,0,0,0,0,0,0,0,0]
+    numberFrequency = [0,0,0,0,0,0,0,0,0,0]
     for row in range(9):
         for collumn in range(9):
             numberFrequency[int(sudoku[row][collumn])] += 1 
@@ -53,6 +53,3 @@ def readParallels(sudoku):
 def createEmptyLineReassignment():
     
     return [[False,0,0,0],[False,0,0,0],[False,0,0,0]] #Vorangestelltes Bool: Sicher zugewiesen
-           
-
-

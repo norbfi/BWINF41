@@ -1,13 +1,8 @@
-import DataReading
+import firstWay
+import secoundWay
+import ReadingSource
 
-print(DataReading.DataReading('Aufgabe 4 Fahrradwerkstatt\Beispiel Daten\FahrradBeispiel0.txt'))
+#path = input("Which data do you want to use?: ")#! Ignore for easier testig
 
-
-
-
-
-
-
-
-
-
+firstWay.Simulation("00")#path)
+#secoundWay.Simulation("02")#path)

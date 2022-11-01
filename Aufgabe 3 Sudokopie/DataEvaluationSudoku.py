@@ -1,7 +1,4 @@
 
-from distutils.util import check_environ
-from site import check_enableusersite
-
 
 def isComparable(orgNF, copyNF, orgPar, copyPar):
 
@@ -14,31 +11,25 @@ def isComparable(orgNF, copyNF, orgPar, copyPar):
     copyParRow = copyPar[0][:]
     copyParCollumn = copyPar[1][:]
     
-    #[0,5,6,2,4,6,2,4,6]
-    #[0,5,6,6,4,2,6,4,2]
-    return "yourMOM"
+    return None #sollte am Anfang ausgeführt werden: vergleich von simplen werten
 
 
-def getAllocatedData(numbers, rows, columns):
+
+def allocateNumbers(orgNF, copyNF):
+
+    reassignedNumbers=[0,0,0,0,0,0,0,0,0]
+
+    for number in range (0,max(orgNF)):
+        if orgNF.count(number) != 1:
+            continue
+        if copyNF.count(number) != 1:
+            continue
+
+        orgIndex = orgNF.index(number)
+        copyIndex = copyNF.index(number)
+        reassignedNumbers[orgIndex] = copyIndex
+
+    return reassignedNumbers
+
     
-    Zahlen aus den Blöcken
-    Zahlen aus der Spalte und Zeile
 
-
-
-
-
-
-    return None
-
-
-    hast ne zahl
-
-    die Zahl kann durch Zahlhäufigkeit eingegrenzt werden
-    die Zahl kann durch die Parallelen eingegrenzt werden
-    -Anzahl der Parallee
-    -zahlenhäufigkeit der Parallen
-    -Blöcke der parallelen
-    die Zahl kann durch den Block eingegrenzt werden
-    
-    wenn der scheiß garnet funzt, dann tiefere Analyse
