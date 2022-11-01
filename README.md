@@ -12,9 +12,6 @@
   - eigene wachstumsgeschwind. jede richtung
   - nicht crossen
   - aus orientierung result. lichtreflektion als grauton
-  - ### Wichtig:
-  - Die Geschwindigkeit pro Richtung bleibt immer gleich.
-  - 
 ### Aufgabe 3: Paul
 - createEmptyLineReassignment() : Struktur Überarbeiten
 - Zahlen wiederfinden (+rotation)
@@ -25,12 +22,10 @@
 ### Aufgabe 5 (unbearbeitet)
 
 ## Links
-### Aufgaben
-- https://bwinf.de/fileadmin/bundeswettbewerb/41/Bundeswettbewerb_41_Aufgabenblatt_WEB.pdf
 ### Beispiele
 - https://bwinf.de/bundeswettbewerb/41/1/
-### Fragen
-- https://www.einstieg-informatik.de/community/
+### Aufgaben
+- https://bwinf.de/fileadmin/bundeswettbewerb/41/Bundeswettbewerb_41_Aufgabenblatt_WEB.pdf
 
 
 
