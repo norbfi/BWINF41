@@ -1,5 +1,5 @@
 import ReadingSource
-
+import currentJobSimulation
 
 
 def Simulation(path):
@@ -12,32 +12,26 @@ def Simulation(path):
     avgTimeCount = 0 #Count of finished Jobs (for average)
     days = 0 #Count of nights in the simulation
 
-    src=ReadingSource.readingData(path)
+    delayTime = 0 #
 
-    #! Same like in First
-    #? Maybe this should go in a own method
+
+    src=ReadingSource.readingData(path)
     for i in range(len(src)):
         currentJob = src[i]
         if(globalTime < currentJob[1]):
+            delayTime = delayTime + (currentJob[1] - globalTime)
             globalTime=currentJob[1]
-        while(currentJob[2] > 0):
-            if (((globalTime / 60) + 7) % 24 == 0):
 
 
-                globalTime += 960
-                days += 1
-            else:
-                currentJob[2] -= 1
-                globalTime += 1
+        #! Same like in First
+        #? Maybe this should go in a own method
+        maxTime, avgTimeSum, avgTimeCount, days, globalTime = currentJobSimulation.simulation(currentJob, maxTime, avgTimeSum, avgTimeCount, days, globalTime)
+        #? Maybe this should go in a own method
+        #! Same like in Secound
 
-        waitingTime = globalTime - currentJob[1]
-        if waitingTime > maxTime:
-            maxTime = waitingTime
-        avgTimeSum += waitingTime
-        avgTimeCount += 1
-    #? Maybe this should go in a own method
-    #! Same like in Secound
-
+    days = days + ((delayTime  / 60) /24)
+    avgTime = avgTimeSum/avgTimeCount
+    return "first", path, maxTime, avgTime, days, delayTime
     print(f"|----------|--------------------|--------------------|--------------------|\n|   path   |  Max waitingTime   |  Avg waitingTime   |        days        |\n|----------|--------------------|--------------------|--------------------|\n|{path: ^10}|{maxTime: ^20}|{avgTimeSum/avgTimeCount: ^20}|{days: ^20}|\n|----------|--------------------|--------------------|--------------------|")
 
 """

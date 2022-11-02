@@ -39,7 +39,3 @@ def mergeSort(myList):
             myList[k]=right[j]
             j += 1
             k += 1
-
-myList = [[1,2], [4,4], [5,10], [3,1]]
-mergeSort(myList)
-print(myList)

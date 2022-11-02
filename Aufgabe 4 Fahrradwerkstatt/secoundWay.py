@@ -1,5 +1,7 @@
 import ReadingSource
-from mergeSort import mergeSort
+import mergeSort
+import binarySearch
+import currentJobSimulation
 
 def Simulation(path):
     globalTime = 0 #Counts each minute
@@ -11,6 +13,8 @@ def Simulation(path):
     avgTimeCount = 0 #Count of finished Jobs (for average)
     days = 0 #Count of nights in the simulation
 
+    delayTime = 0 #
+
     src=ReadingSource.readingData(path)
 
     while(len(src) > 0):
@@ -18,34 +22,32 @@ def Simulation(path):
 
         for i in range(len(src)):
             srcVal = src[i]
-            if srcVal[2] <= globalTime:
+            if srcVal[1] <= globalTime:
                 possibleJobs.append(src[i])
             else:
                 break
-        mergeSort(possibleJobs)
-        currentJob = possibleJobs[0]
+        if len(possibleJobs) != 0:
+            mergeSort.mergeSort(possibleJobs)
+            currentJob = possibleJobs[0]
+        else:
+            currentJob = src[0]
+            delayTime = delayTime + (currentJob[1] - globalTime)
+            globalTime = currentJob[1]
 
-        #! Same like in First
-        #? Maybe this should go in a own method
-        while(currentJob[2] > 0):
-            if (((globalTime / 60) + 7) % 24 == 0):
 
 
-                globalTime += 960
-                days += 1
-            else:
-                currentJob[2] -= 1
-                globalTime += 1
+        maxTime, avgTimeSum, avgTimeCount, days, globalTime = currentJobSimulation.simulation(currentJob, maxTime, avgTimeSum, avgTimeCount, days, globalTime)
 
-        waitingTime = globalTime - currentJob[1]
-        if waitingTime > maxTime:
-            maxTime = waitingTime
-        avgTimeSum += waitingTime
+        src.pop(binarySearch.binary_search(src, 0, len(src), currentJob))
+    days = days + ((delayTime  / 60) /24)
+    avgTime = avgTimeSum/avgTimeCount
+    return "secound", path, maxTime, avgTime, days, delayTime
 
-        avgTimeCount += 1
 
-        #? Maybe this should go in a own method
-        #! Same like in First
+
+
+
+    print(f"|----------|--------------------|--------------------|--------------------|\n|   path   |  Max waitingTime   |  Avg waitingTime   |        days        |\n|----------|--------------------|--------------------|--------------------|\n|{path: ^10}|{maxTime: ^20}|{avgTimeSum/avgTimeCount: ^20}|{days: ^20}|\n|----------|--------------------|--------------------|--------------------|")
 
 """
 path = input("Which data do you want to use?: ")
