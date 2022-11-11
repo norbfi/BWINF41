@@ -19,6 +19,7 @@
 
 
 ### Aufgabe 4: Sebastion
+- mostly fertig
 ### Aufgabe 5 (unbearbeitet)
 
 ## Links
