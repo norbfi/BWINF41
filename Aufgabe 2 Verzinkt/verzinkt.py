@@ -19,12 +19,20 @@ def spwnpnt():
 
 #simulation code
 def crisgrow(spwnpnt):
-    pass 
+    spwnpnt = spwnpnt()
+
+    for i in range(spwnpnt[0], 100):
+        for j in range(spwnpnt[1], 100):
+            img.putpixel((i, j), bottom)
+            
 
 
 #for i in range(0,50):
  #   for j in range(0,50):
   #      img.putpixel((i, j), bottom)
+
+crisgrow(spwnpnt)
+
 
 img.save("img.png")
 
