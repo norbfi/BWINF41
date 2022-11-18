@@ -38,9 +38,40 @@ def Simulation(path):
 
 
 
-        maxTime, avgTimeSum, avgTimeCount, days, globalTime = currentJobSimulation.simulation(currentJob, maxTime, avgTimeSum, avgTimeCount, days, globalTime)
+        while(currentJob[2] > 0):
+            if (((globalTime / 60) + 7) % 24 == 0):
+                
+                if currentJob[2] < 60:
+                    globalTime == globalTime + currentJob[2]
+                    currentJob[2] = 0
+                    src, maxTime, avgTimeSum, avgTimeCount = auswertung(src, globalTime, currentJob, maxTime, avgTimeSum, avgTimeCount)
+                
+                globalTime += 960
+                days += 1
+                
+            else:
+                currentJob[2] -= 1
+                globalTime += 1
 
-        src.pop(binarySearch.binary_search(src, 0, len(src), currentJob))
+        '''waitingTime = globalTime - currentJob[1]
+        if waitingTime > maxTime:
+            maxTime = waitingTime
+        avgTimeSum += waitingTime
+        avgTimeCount += 1
+        src.pop(binarySearch.binary_search(src, 0, len(src), currentJob))'''
+        src, maxTime, avgTimeSum, avgTimeCount = auswertung(src, globalTime, currentJob, maxTime, avgTimeSum, avgTimeCount)
+
+
     days = days + ((delayTime  / 60) /24)
     avgTime = avgTimeSum/avgTimeCount
     return "better", path, maxTime, avgTime, days, delayTime
+
+def auswertung(src, globalTime, currentJob, maxTime, avgTimeSum, avgTimeCount):
+    waitingTime = globalTime - currentJob[1]
+    if waitingTime > maxTime:
+        maxTime = waitingTime
+    avgTimeSum += waitingTime
+    avgTimeCount += 1
+    src.pop(binarySearch.binary_search(src, 0, len(src), currentJob))
+    return src, maxTime, avgTimeSum, avgTimeCount
+    
