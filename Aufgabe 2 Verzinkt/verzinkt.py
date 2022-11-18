@@ -47,3 +47,6 @@ crisgrow(spwnpnt)
 img.save("img.png")
 
 #TODO farb algorithmus
+
+
+#test
