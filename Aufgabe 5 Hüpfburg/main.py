@@ -4,7 +4,7 @@ path = ["00", "01", "02", "03", "04"]
 
 arrows = ReadingSource.readingData(path[0])
 
-jumpingWay1 = [1]
-jumpingWay2 = [2]
+jumpingWay1 = [1, 1]
+jumpingWay2 = [2, 2]
 print(arrows)
-print(wayFinder.simulation(arrows, jumpingWay1, jumpingWay2))
+print(wayFinder.simulation(arrows, jumpingWay1, jumpingWay2, 0, 0))
