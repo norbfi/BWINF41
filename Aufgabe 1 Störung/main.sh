@@ -14,11 +14,9 @@ for (( i=0; i<${#search}; i++ )); do
         search=${search/_/.*};
     fi
 done
-echo $search
-echo $fname
 
 #use grep, pattern = Das.*mir.*vor.*, fname = Alice_im_Wunderland.txt 
-if [ -f $fname ]; then
-    result=`grep -E "$search" $fname`
-    echo $result;
-fi
+result=`grep -E "$search", $fname`
+echo $result;
+
+#greb ist laut https://www.einstieg-informatik.de/community/forums/topic/877/41-1-a1-storung-shell erlaubt zu benutzen.
