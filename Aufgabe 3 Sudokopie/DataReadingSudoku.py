@@ -1,7 +1,9 @@
 ﻿ 
-def readSudoku(source, isOriginal):
+def readSudoku(source, isOriginal, rotate):
 
     sudoku = []
+    for i in range(81):
+        sudoku.append(None)
     #textdokument �ffnen, auslesen
     textfile = open(source, encoding='utf-8-sig') 
     
@@ -15,36 +17,41 @@ def readSudoku(source, isOriginal):
     else:
         offset = 10
 
-    for row in range(0+offset,9+offset):
-        (c0, c1, c2, c3, c4, c5, c6, c7, c8) = textfileAsList[row].split()
-        sudoku.append([c0, c1, c2, c3, c4, c5, c6, c7, c8])
-    
-    return sudoku
+    if rotate == False:
+        for row in range(0+offset,9+offset):
+            (sudoku[(row-offset)*9+0], sudoku[(row-offset)*9+1],sudoku[(row-offset)*9+2], sudoku[(row-offset)*9+3], sudoku[(row-offset)*9+4], sudoku[(row-offset)*9+5], sudoku[(row-offset)*9+6], sudoku[(row-offset)*9+7], sudoku[(row-offset)*9+8]) = textfileAsList[row].split()
+
+        return sudoku
+
+
+    else:
+        for collumn in range(0+offset,9+offset):
+            (sudoku[(collumn-offset)+0], sudoku[(collumn-offset)+9], sudoku[(collumn-offset)+18], sudoku[(collumn-offset)+27], sudoku[(collumn-offset)+36], sudoku[(collumn-offset)+45], sudoku[(collumn-offset)+54], sudoku[(collumn-offset)+63], sudoku[(collumn-offset)+72]) = textfileAsList[collumn].split()
+        
+        return sudoku
+
+
 
 
 
 def readNumberFrequency(sudoku):
     
     numberFrequency = [0,0,0,0,0,0,0,0,0,0]
-    for row in range(9):
-        for collumn in range(9):
-            numberFrequency[int(sudoku[row][collumn])] += 1 
+    for i in range(81):
+            numberFrequency[int(sudoku[i])] += 1 
+
     return numberFrequency[1:]   
 
 
 def readParallels(sudoku):
     
     parallelsRow = [0,0,0,0,0,0,0,0,0]
-    for row in range(9):
-        for collumn in range(9):
-            if int(sudoku[row][collumn]) != 0:
-                parallelsRow[row] += 1
-       
     parallelsCollumn = [0,0,0,0,0,0,0,0,0]
-    for collumn in range(9):
-        for row in range(9):
-            if int(sudoku[row][collumn]) != 0:
-                parallelsCollumn[collumn] += 1
+    for i in range(81):    
+   
+        if int(sudoku[i]) != 0:
+            parallelsRow[(i)//9] += 1
+            parallelsCollumn[(i)%9] += 1
     
     return parallelsRow, parallelsCollumn
 
@@ -52,4 +59,4 @@ def readParallels(sudoku):
 
 def createEmptyLineReassignment():
     
-    return [[False,0,0,0],[False,0,0,0],[False,0,0,0]] #Vorangestelltes Bool: Sicher zugewiesen
+    return [[0,0,0],[0,0,0],[0,0,0]]
