@@ -1,12 +1,12 @@
-def mergeSort(myList):
+def mergeSort(myList, x): #sort list by waiting time to get the shortest job; x is the position in list where to sort
     if len(myList) > 1:
         mid = len(myList) // 2
         left = myList[:mid]
         right = myList[mid:]
 
         # Recursive call on each half
-        mergeSort(left)
-        mergeSort(right)
+        mergeSort(left, x)
+        mergeSort(right, x)
 
         # Two iterators for traversing the two halves
         i = 0
@@ -18,7 +18,7 @@ def mergeSort(myList):
         while i < len(left) and j < len(right):
             leftVal = left[i]
             rightVal = right[j]
-            if leftVal[2] <= rightVal[2]:
+            if leftVal[x] <= rightVal[x]:
               # The value from the left half has been used
               myList[k] = left[i]
               # Move the iterator forward

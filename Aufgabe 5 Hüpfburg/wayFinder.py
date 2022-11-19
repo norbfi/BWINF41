@@ -1,6 +1,6 @@
 def simulation(arrows, jumpingWay1, jumpingWay2, attampt1, attampt2):
     while True:
-        print("sim start...")
+        #print("sim start...")
         if jumpingWay1[-1] == jumpingWay2[-1]:
             return 'solved', jumpingWay1, jumpingWay2
 
