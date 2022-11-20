@@ -4,13 +4,8 @@ from DataEvaluationSudoku import *
 #VarierendeVariablen
 class Sudoku:
 
-<<<<<<< HEAD
     def __init__(self,datapath, isOriginal, rotate):
         self.field = readSudoku(datapath, isOriginal, rotate) #[81] Array
-=======
-    def __init__(self, isOriginal, rotate):
-        self.field = readSudoku('/Users/ben/programming/BWINF41/Aufgabe 3 Sudokopie/Beispieldaten/Sudoku0.txt', isOriginal, rotate) #[81] Array
->>>>>>> 8781f4b3c2f629dd9472166357f0af39c34a9686
         self.numberfrequency = readNumberFrequency(self.field) #1d Array, warning: number = index -1
         self.parallels = readParallels(self.field) #2d Array [[R],[C]]
 
