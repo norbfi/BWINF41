@@ -42,7 +42,7 @@ else:
     sudokuCopy = Sudoku(False, True)
     sudokuCopy.createReconstructionData()
     sudokuCopy.createSingularityGrid()
-    sudokuCopy.isRotated == True 
+    sudokuCopy.isRotated = True 
 
     sgGridCopyCopy = sudokuCopy.singularityGrid.copy()
     sgGridCopyCopy.sort()

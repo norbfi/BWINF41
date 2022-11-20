@@ -10,7 +10,7 @@ def isACopy(sudoku):
     print("The sudoku is a copy from the original\n")
     
     if sudoku.isRotated == True:
-        print("The sudoku was rotated")
+        print("--The sudoku has been rotated--")
 
     outputStringNB = "Numberreassignment [copy -> original number]: "
     i = 0
@@ -33,7 +33,7 @@ def isACopy(sudoku):
     print(outputStringRow)
     print(outputStringCol)
     print("\n-----------------------------------------------------------")
-    quit()
+    system.exit()
 
 
 def createIndividualNumbers(sudoku):
