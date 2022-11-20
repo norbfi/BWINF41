@@ -2,12 +2,12 @@ from os import system
 
 def isNotACopy(error):
 
-    print(f'The sudoku is not a copy [{error}]')
+    print(f'\nThe sudoku is not a copy [{error}]')
     input()
     quit()
 
 def isACopy(sudoku):
-    print("The sudoku is a copy from the original\n")
+    print("\nThe sudoku is a copy from the original\n")
     
     if sudoku.isRotated == True:
         print("--The sudoku has been rotated--")

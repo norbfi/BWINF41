@@ -4,8 +4,8 @@ from DataEvaluationSudoku import *
 #VarierendeVariablen
 class Sudoku:
 
-    def __init__(self, isOriginal, rotate):
-        self.field = readSudoku('Aufgabe 3 Sudokopie\Beispieldaten\Sudoku0.txt', isOriginal, rotate) #[81] Array
+    def __init__(self,datapath, isOriginal, rotate):
+        self.field = readSudoku(datapath, isOriginal, rotate) #[81] Array
         self.numberfrequency = readNumberFrequency(self.field) #1d Array, warning: number = index -1
         self.parallels = readParallels(self.field) #2d Array [[R],[C]]
 
@@ -20,9 +20,9 @@ class Sudoku:
     def createSingularityGrid(self):
         self.singularityGrid = createIndividualNumbers(self)
      
-
-sudokuOriginal = Sudoku(True, False)
-sudokuCopy = Sudoku(False, False)
+datapath = str(input("Datapath(input): "))
+sudokuOriginal = Sudoku(datapath ,True, False)
+sudokuCopy = Sudoku(datapath, False, False)
 sudokuCopy.createReconstructionData()
 
 sudokuOriginal.createSingularityGrid()
@@ -39,7 +39,7 @@ if sgGridCopyOrg == sgGridCopyCopy:
 
 #else rotate
 else:
-    sudokuCopy = Sudoku(False, True)
+    sudokuCopy = Sudoku(datapath, False, True)
     sudokuCopy.createReconstructionData()
     sudokuCopy.createSingularityGrid()
     sudokuCopy.isRotated = True 
