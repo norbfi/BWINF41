@@ -30,7 +30,6 @@ def Simulation(path): #simulate the better way based on the dataset by path
             i.insert(3, i[2] / i[1])
 
 
-
         if len(possibleJobs) != 0:
             mergeSort.mergeSort(possibleJobs, 3)
             currentJob = possibleJobs[0].copy()
@@ -41,15 +40,9 @@ def Simulation(path): #simulate the better way based on the dataset by path
             while not((globalTime / 60) % 24 < 17 and (globalTime / 60) % 24 > 9): #skips time to the next morining
                 globalTime += 1
 
-
-
         while(currentJob[2] > 0): #simulate the time of work
 
             if (((globalTime / 60) + 7) % 24 == 0): #if the working time per day is over
-
-
-
-
                 globalTime += 960 #skip the nights
 
             else:
