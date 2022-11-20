@@ -58,7 +58,7 @@ while 1 == 1:
 
         if sudokuCopy.singularityGrid.count(sudokuCopy.singularityGrid[i]) != 1:
             #print("multiple")
-            continue #hier ist es möglich weitere Daten zu verwerten
+            continue #hier ist es moeglich weitere Daten zu verwerten
 
 
         #numberreassignment
@@ -126,7 +126,7 @@ while 1 == 1:
             if avgColumn != int(sudokuCopy.columnReassignment[x][y])//3:
                 isNotACopy("missmatching columns in Blocks")
 
-    #letzte Werte füllen
+    #letzte Werte fuellen
     if sudokuCopy.numberReassignment.count(None) == 1:
         indexEmpty = sudokuCopy.numberReassignment.inex(None)
         sum = 0
