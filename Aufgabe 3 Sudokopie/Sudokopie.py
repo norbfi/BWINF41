@@ -81,7 +81,7 @@ while 1 == 1:
         
         sudokuCopy.columnReassignment[(i%9)//3][(i%9)%3] = orgIndex%9
     
-    #Lines auﬂerhalb des Trios
+    #ausserhalb des Trios
     for x in range(3):
         avgRow = None
         avgColumn = None

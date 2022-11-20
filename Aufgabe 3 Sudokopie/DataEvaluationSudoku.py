@@ -4,7 +4,7 @@ def isNotACopy(error):
 
     print(f'The sudoku is not a copy [{error}]')
     input()
-    system.exit()
+    quit()
 
 def isACopy(sudoku):
     print("The sudoku is a copy from the original\n")
@@ -34,7 +34,7 @@ def isACopy(sudoku):
     print(outputStringCol)
     print("\n-----------------------------------------------------------")
     input("Press enter to exit")
-    system.exit()
+    quit()
 
 
 def createIndividualNumbers(sudoku):
