@@ -88,7 +88,7 @@ if len(paths) > 1: #show average if there are multiple datasets
 
 print(f"+----------+----------+--------------------+--------------------+")
 
-end=input("press eny key to close...")
+end=input("press any key to close...")
 
 
 ''' Result #1
