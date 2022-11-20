@@ -2,9 +2,9 @@
 
 #input
 fname="/Users/ben/programming/BWINF41/Aufgabe 1 Störung/Alice_im_Wunderland.txt";
-input="wollen _ so _ sein";
+input="das _ mir _ _ vor"; #Das _wird_ sonderbar sein
 
-#change "_" in 
+#change "_" in .*
 for (( i=0; i<${#input}; i++ )); do
     char=${input:$i:1};
     if [ $char = "_" ]; then
