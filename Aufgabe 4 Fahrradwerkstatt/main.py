@@ -17,7 +17,7 @@ firstAllTimeAvgCount = 0 #Count of all waiting times to get the average time
 secoundAllTimeAvgCount = 0
 betterAllTimeAvgSum = 0
 
-allTimeStats = [] #two dimensional array of time statistics for each way
+allTimeStats = [] #two dimensional list of time statistics for each way
 
 
 #User input

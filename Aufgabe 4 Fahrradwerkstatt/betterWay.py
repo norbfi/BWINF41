@@ -18,7 +18,7 @@ def Simulation(path): #simulate the better way based on the dataset by path
 
         possibleJobs = []
         for i in range(len(src)):
-            srcVal = src[i]
+            srcVal = src[i].copy()
             if srcVal[1] <= globalTime:
                 var = src[i].copy()
                 possibleJobs.append(var)
@@ -26,6 +26,7 @@ def Simulation(path): #simulate the better way based on the dataset by path
                 break
 
         for i in possibleJobs: #makes the waiting time in relation to the start time
+
             i.insert(3, i[2] / i[1])
 
 
@@ -35,7 +36,7 @@ def Simulation(path): #simulate the better way based on the dataset by path
             currentJob = possibleJobs[0].copy()
 
         else: #skips time to the next job start time
-            currentJob = src[0]
+            currentJob = src[0].copy()
             globalTime = currentJob[1]
             while not((globalTime / 60) % 24 < 17 and (globalTime / 60) % 24 > 9): #skips time to the next morining
                 globalTime += 1
