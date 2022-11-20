@@ -8,7 +8,7 @@ class Sudoku:
         self.field = readSudoku(datapath, isOriginal, rotate) #[81] Array
         self.numberfrequency = readNumberFrequency(self.field) #1d Array, warning: number = index -1
         self.parallels = readParallels(self.field) #2d Array [[R],[C]]
-
+        self.singularityGrid = createIndividualNumbers(self)
 
     def createReconstructionData(self):
         self.numberReassignment = [None,None,None,None,None,None,None,None,None] #index + 1 = copyNumber; value = orgNumber
@@ -16,17 +16,11 @@ class Sudoku:
         self.columnReassignment = createEmptyLineReassignment()
         
         self.isRotated = False
-
-    def createSingularityGrid(self):
-        self.singularityGrid = createIndividualNumbers(self)
      
 datapath = str(input("Datapath(input): "))
 sudokuOriginal = Sudoku(datapath ,True, False)
 sudokuCopy = Sudoku(datapath, False, False)
 sudokuCopy.createReconstructionData()
-
-sudokuOriginal.createSingularityGrid()
-sudokuCopy.createSingularityGrid()
 
 sgGridCopyOrg = sudokuOriginal.singularityGrid.copy()
 sgGridCopyCopy = sudokuCopy.singularityGrid.copy()
@@ -41,7 +35,6 @@ if sgGridCopyOrg == sgGridCopyCopy:
 else:
     sudokuCopy = Sudoku(datapath, False, True)
     sudokuCopy.createReconstructionData()
-    sudokuCopy.createSingularityGrid()
     sudokuCopy.isRotated = True 
 
     sgGridCopyCopy = sudokuCopy.singularityGrid.copy()
