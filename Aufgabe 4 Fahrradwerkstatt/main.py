@@ -2,7 +2,7 @@ import betterWay
 import firstWay
 import secoundWay
 import time
-time.sleep(100)
+
 paths = [] #path of dataset
 
 firstAllTimeMax = 0 #var to save the max time of each way
@@ -88,7 +88,9 @@ if len(paths) > 1: #show average if there are multiple datasets
 
 print(f"+----------+----------+--------------------+--------------------+")
 
-time.sleep(100)
+end=input("press eny key to close...")
+
+
 ''' Result #1
 +----------+----------+--------------------+--------------------+--------------------+
 | methode  |   path   |  Max waitingTime   |  Avg waitingTime   |        days        |

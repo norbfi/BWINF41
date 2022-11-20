@@ -47,10 +47,6 @@ def Simulation(path): #simulate the better way based on the dataset by path
             if (((globalTime / 60) + 7) % 24 == 0): #if the working time per day is over
 
 
-                '''if currentJob[2] < 60: #? use this part, or not????
-                    globalTime == globalTime + currentJob[2]
-                    currentJob[2] = 0
-                    src, maxTime, avgTimeSum, avgTimeCount = auswertung(src, globalTime, currentJob, maxTime, avgTimeSum, avgTimeCount)'''
 
 
                 globalTime += 960 #skip the nights
