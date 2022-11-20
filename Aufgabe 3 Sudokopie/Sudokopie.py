@@ -5,7 +5,7 @@ from DataEvaluationSudoku import *
 class Sudoku:
 
     def __init__(self, isOriginal, rotate):
-        self.field = readSudoku('Aufgabe 3 Sudokopie\Beispieldaten\Sudoku0.txt', isOriginal, rotate) #[81] Array
+        self.field = readSudoku('/Users/ben/programming/BWINF41/Aufgabe 3 Sudokopie/Beispieldaten/Sudoku0.txt', isOriginal, rotate) #[81] Array
         self.numberfrequency = readNumberFrequency(self.field) #1d Array, warning: number = index -1
         self.parallels = readParallels(self.field) #2d Array [[R],[C]]
 
@@ -48,7 +48,7 @@ else:
     sgGridCopyCopy.sort()
 
     if sgGridCopyOrg != sgGridCopyCopy:
-        isNotACopy("mismatching singularities")
+        isNotACopy("missmatching singularities")
 
 while 1 == 1:
     
@@ -64,7 +64,7 @@ while 1 == 1:
         #numberreassignment
         orgIndex = sudokuOriginal.singularityGrid.index(sudokuCopy.singularityGrid[i])
         if sudokuCopy.numberReassignment[int(sudokuCopy.field[i])-1] != None and int(sudokuCopy.numberReassignment[int(sudokuCopy.field[i])-1]) != int(sudokuOriginal.field[orgIndex])-1:
-            isNotACopy("mismatching numberreassignment")
+            isNotACopy("missmatching numberreassignment")
 
         sudokuCopy.numberReassignment[int(sudokuCopy.field[i])-1] = int(sudokuOriginal.field[orgIndex])-1
         #copyIndexNumber = OrgNumber
