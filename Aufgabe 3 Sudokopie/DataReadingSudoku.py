@@ -32,8 +32,6 @@ def readSudoku(source, isOriginal, rotate):
 
 
 
-
-
 def readNumberFrequency(sudoku):
     
     numberFrequency = [0,0,0,0,0,0,0,0,0,0]
@@ -59,4 +57,4 @@ def readParallels(sudoku):
 
 def createEmptyLineReassignment():
     
-    return [[0,0,0],[0,0,0],[0,0,0]]
+    return [[None,None,None],[None,None,None],[None,None,None]]

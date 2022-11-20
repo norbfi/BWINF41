@@ -1,22 +1,42 @@
-def allocateNumbers(orgNF, copyNF):
+from os import system
 
-    reassignedNumbers=[0,0,0,0,0,0,0,0,0]
+def isNotACopy(error):
 
-    for number in range (0,max(orgNF)):
-        if orgNF.count(number) != 1:
-            continue
-        if copyNF.count(number) != 1:
-            continue
+    print(f'The sudoku is not a copy [{error}]')
+    input()
+    system.exit()
 
-        orgIndex = orgNF.index(number)
-        copyIndex = copyNF.index(number)
-        reassignedNumbers[orgIndex] = copyIndex
+def isACopy(sudoku):
+    print("The sudoku is a copy from the original\n")
+    
+    if sudoku.isRotated == True:
+        print("The sudoku was rotated")
 
-    return reassignedNumbers
+    outputStringNB = "Numberreassignment [copy -> original number]: "
+    i = 0
+    for number in sudoku.numberReassignment:
+        if number != None:
+            outputStringNB += f'[{i+1} -> {number+1}], '
+        i+=1
+    print(outputStringNB)
 
-   
+    outputStringRow = "Rowreassignment [copy -> original row]: "
+    outputStringCol = "Columnreassignment [copy -> original column]: "
+    for x in range(3):
+        for y in range(3):
+            if sudoku.rowReassignment[x][y] != None:
+                outputStringRow += f'[{(x*3)+y+1} -> {sudoku.rowReassignment[x][y]+1}], '
+            
+            if sudoku.columnReassignment[x][y] != None:
+                outputStringCol += f'[{(x*3)+y+1} -> {sudoku.columnReassignment[x][y]+1}], '
 
-def createIndividualNumber(sudoku):
+    print(outputStringRow)
+    print(outputStringCol)
+    print("\n-----------------------------------------------------------")
+    quit()
+
+
+def createIndividualNumbers(sudoku):
     
     singularityGrid = []
 
@@ -35,9 +55,9 @@ def createIndividualNumber(sudoku):
         blockBeginn = (i//27)*27 + ((i%9)//3)*3 
 
         for row in range(3):
-            for collumn in range(3):
+            for column in range(3):
                 
-                position = blockBeginn + collumn + row*9
+                position = blockBeginn + column + row*9
                 if int(sudoku.field[position]) == 0:
                     continue
 
@@ -50,27 +70,27 @@ def createIndividualNumber(sudoku):
         sumOfNf = 0
         row = (i//9)*9
 
-        for collumn in range(9): 
+        for column in range(9): 
 
-            if int(sudoku.field[row+collumn]) == 0:
+            if int(sudoku.field[row+column]) == 0:
                     continue
-            sumOfNf += sudoku.numberfrequency[int(sudoku.field[row+collumn])-1]
+            sumOfNf += sudoku.numberfrequency[int(sudoku.field[row+column])-1]
 
         parallelsRowValue = sudoku.parallels[0][i//9] * sumOfNf * 10
 
-        #parallelsCollumn * 1 * (Sum of: numberFrequency(col.))
+        #parallelsColumn * 1 * (Sum of: numberFrequency(col.))
         sumOfNf = 0
-        collumn = (i%9)
+        column = (i%9)
 
         for row in range(9): 
             
-            if int(sudoku.field[collumn + row*9]) == 0:
+            if int(sudoku.field[column + row*9]) == 0:
                 continue
-            sumOfNf += sudoku.numberfrequency[int(sudoku.field[collumn + row*9])-1]
+            sumOfNf += sudoku.numberfrequency[int(sudoku.field[column + row*9])-1]
 
-        parallelsCollumnValue = sudoku.parallels[1][i%9] * sumOfNf * 1
-        
-        value = frequencyValue + blockValue + parallelsRowValue + parallelsCollumnValue
+        parallelsColumnValue = sudoku.parallels[1][i%9] * sumOfNf * 1
+          
+        value = frequencyValue + blockValue + parallelsRowValue + parallelsColumnValue
         singularityGrid.append(value)
-
+    
     return singularityGrid
