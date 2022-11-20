@@ -33,6 +33,7 @@ def isACopy(sudoku):
     print(outputStringRow)
     print(outputStringCol)
     print("\n-----------------------------------------------------------")
+    input("Press any key to exit")
     system.exit()
 
 
